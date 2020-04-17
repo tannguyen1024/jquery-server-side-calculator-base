@@ -17,7 +17,13 @@ app.listen(PORT, () => {
 }) // End Listen
 
 // Routes
-app.get('/math',(req,res)=>{
+app.get('/math', (req, res) => {
     console.log('in /math GET');
     res.send(math);
 }) // End /math GET
+
+app.post('/math', (req, res) => {
+    console.log('in /math POST with:', req.body);
+    math.push(req.body);
+    res.sendStatus(201);
+}) // End /math POST
