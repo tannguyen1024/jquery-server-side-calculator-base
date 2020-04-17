@@ -6,19 +6,29 @@ function onReady() {
     if (verbose) console.log('in onReady');
     getMath();
     $('#plusButton').on('click', plusButtonClick);
+    $('#minusButton').on('click', minusButtonClick);
+    $('#multiplyButton').on('click', multiplyButtonClick);
+    $('#divideButton').on('click', divideButtonClick);
     $('#submitButton').on('click', postMath)
 }
-
-    // <button id="plusButton">+</button>
-    // <button id="subtractButton">-</button>
-    // <button id="multiplyButton">*</button>
-    // <button id="divideButton">/</button>
 
 // Start Click Listener Functions
 let operator='NONE'
 function plusButtonClick(){
     console.log('You pressed on PLUS');
     operator='PLUS';
+}
+function minusButtonClick() {
+    console.log('You pressed on MINUS');
+    operator = 'MINUS';
+}
+function multiplyButtonClick() {
+    console.log('You pressed on MULTIPLY');
+    operator = 'TIMES';
+}
+function divideButtonClick() {
+    console.log('You pressed on DIVIDE');
+    operator = 'DIVIDEBY';
 }
 // End Click Listener Functions
 
@@ -58,3 +68,16 @@ function postMath() {
         console.log(err)
     })// END AJAX for POST /math
 } // End postMath function
+
+function getAnswer (){
+    $.ajax({
+        type: 'GET',
+        url: '/answer'
+    }).then(function (fajita) {
+        console.log('Back from Server /math with:', fajita)
+        // RUN renderToDom
+    }).catch(function (err) {
+        alert('Your GET has an error, check console!')
+        console.log(err)
+    })// End AJAX for GET /answer
+}

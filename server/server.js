@@ -10,6 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Globals
 const PORT = 5000;
 let math = [];
+let answer = math.length;
 
 // Spin Up Server
 app.listen(PORT, () => {
@@ -21,6 +22,11 @@ app.get('/math', (req, res) => {
     console.log('in /math GET');
     res.send(math);
 }) // End /math GET
+
+app.get('/answer', (req, res) => {
+    console.log('in /answer GET');
+    console.log('Answer is', answer)
+})
 
 app.post('/math', (req, res) => {
     console.log('in /math POST with:', req.body);
