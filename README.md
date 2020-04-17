@@ -6,7 +6,7 @@
 [x] Create gitignore
 [x] Spin up server
 [x] Serve HTML/JS etc
-- Build out input interface in HTML
+[x] Build out input interface in HTML
 - Write post & get routes
 - Write AJAX with GET route
 - Write AJAX with POST route
