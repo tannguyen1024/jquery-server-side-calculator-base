@@ -1,0 +1,24 @@
+{
+  "name": "jquery-server-side-calculator",
+  "version": "1.0.0",
+  "description": "**jQuery Server Side Calculator**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tannguyen1024/jquery-server-side-calculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tannguyen1024/jquery-server-side-calculator/issues"
+  },
+  "homepage": "https://github.com/tannguyen1024/jquery-server-side-calculator#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

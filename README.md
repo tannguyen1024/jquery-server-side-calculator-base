@@ -1,6 +1,19 @@
 # Project Name
+**jQuery Server Side Calculator**
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+[x] npm init
+[x] npm install Express
+[x] Create gitignore
+[x] Spin up server
+[x] Serve HTML/JS etc
+- Build out input interface in HTML
+- Write post & get routes
+- Write AJAX with GET route
+- Write AJAX with POST route
+- does MATH
+- Answer of MATH sent back using GET to client.js
+- get everything on DOM
+- clean up & styling
 
 ## Description
 
