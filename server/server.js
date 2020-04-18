@@ -64,7 +64,8 @@ function doMath (){
             left: math[current].left, 
             operator: "-", 
             right: math[current].right, 
-            answer: answer}
+            answer: answer
+        }
         mathReturn.push(objectToClient);
         console.log(mathReturn)
     }

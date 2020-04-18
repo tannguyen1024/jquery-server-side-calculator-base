@@ -7,29 +7,43 @@ function onReady() {
     getMath();
     // renderToDom();
     $('#plusButton').on('click', plusButtonClick);
-    $('#minusButton').on('click', minusButtonClick);
+    $('#subtractButton').on('click', subtractButtonClick);
     $('#multiplyButton').on('click', multiplyButtonClick);
     $('#divideButton').on('click', divideButtonClick);
-    $('#submitButton').on('click', postMath)
+    $('#submitButton').on('click', postMath);
+    $('#clearButton').on('click', clearButtonClick)
 }
 
 // Start Click Listener Functions
 let operator = 'NONE'
 function plusButtonClick() {
     console.log('You pressed on PLUS');
+    $(this).siblings().removeClass('clicked');
+    $(this).addClass('clicked');
     operator = '+';
 }
-function minusButtonClick() {
+function subtractButtonClick() {
     console.log('You pressed on MINUS');
+    $(this).siblings().removeClass('clicked');
+    $(this).addClass('clicked');
     operator = '-';
 }
 function multiplyButtonClick() {
     console.log('You pressed on MULTIPLY');
+    $(this).siblings().removeClass('clicked');
+    $(this).addClass('clicked');
     operator = '*';
 }
 function divideButtonClick() {
     console.log('You pressed on DIVIDE');
+    $(this).siblings().removeClass('clicked');
+    $(this).addClass('clicked');
     operator = '/';
+}
+function clearButtonClick() {
+    console.log('You pressed on CLEAR');
+    $('#leftInput').val('');
+    $('#rightInput').val('');
 }
 // End Click Listener Functions
 
@@ -95,7 +109,7 @@ function renderToDom(history) {
     el.empty();
     for (let i = 0; i < history.length; i++) {
         el.append(`<li>${history[i].left} ${history[i].operator} ${history[i].right} = ${history[i].answer}</li>`)
-        if (i = history.length - 1) {
+        if (i === history.length-1) {
             $('#answer').empty().append(`${history[i].answer}`)
         }
     }
