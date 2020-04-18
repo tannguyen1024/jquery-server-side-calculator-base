@@ -15,44 +15,43 @@ function onReady() {
 // Start Click Listener Functions
 let operator = 'NONE'
 function plusButtonClick() {
-    console.log('You pressed on PLUS');
+    console.log('You pressed PLUS');
     $(this).siblings().removeClass('clicked');
     $(this).addClass('clicked');
     operator = '+';
 }
 function subtractButtonClick() {
-    console.log('You pressed on MINUS');
+    console.log('You pressed MINUS');
     $(this).siblings().removeClass('clicked');
     $(this).addClass('clicked');
     operator = '-';
 }
 function multiplyButtonClick() {
-    console.log('You pressed on MULTIPLY');
+    console.log('You pressed MULTIPLY');
     $(this).siblings().removeClass('clicked');
     $(this).addClass('clicked');
     operator = '*';
 }
 function divideButtonClick() {
-    console.log('You pressed on DIVIDE');
+    console.log('You pressed DIVIDE');
     $(this).siblings().removeClass('clicked');
     $(this).addClass('clicked');
     operator = '/';
 }
 function clearButtonClick() {
-    console.log('You pressed on CLEAR');
+    console.log('You pressed CLEAR');
     $('#leftInput').val('');
     $('#rightInput').val('');
 }
 // End Click Listener Functions
 
 function getMath() {
-    console.log('in getMath');
+    if (verbose) console.log('in getMath');
     $.ajax({
         type: 'GET',
         url: '/math'
     }).then(function (taco) {
-        console.log('Back from Server /math with:', taco)
-        // RUN renderToDom
+        if (verbose) console.log('Back from Server /math with:', taco)
         renderToDom(taco);
     }).catch(function (err) {
         alert('Your GET has an error, check console!')
@@ -60,12 +59,11 @@ function getMath() {
     })// End AJAX for GET /math
 } // End getMath function
 
-
 function postMath() {
     if (verbose) console.log('in postMath');
     // Gather information from webpage
     if (operator == "NONE") {
-        alert('Please press an operator!')
+        alert('Please select an operator!')
     }
     else {
         let objectToSend = {

@@ -1,5 +1,4 @@
-# Project Name
-**jQuery Server Side Calculator**
+# jQuery Server Side Calculator
 
 [x] npm init
 [x] npm install Express
@@ -7,16 +6,16 @@
 [x] Spin up server
 [x] Serve HTML/JS etc
 [x] Build out input interface in HTML
-- Write post & get routes
-- Write AJAX with GET route
-- Write AJAX with POST route
-- does MATH
-- Answer of MATH sent back using GET to client.js
-- get everything on DOM
-- clean up & styling
+[x] Write post & get routes
+[x] Write AJAX with GET route
+[x] Write AJAX with POST route
+[x] does MATH
+[x] Answer of MATH sent back using GET to client.js
+[x] get everything on DOM
+[ ] clean up & styling
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+Base mode has completed, stretch mode will be uploaded to a separate repo.
 
 Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
