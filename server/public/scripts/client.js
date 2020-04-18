@@ -1,11 +1,9 @@
-console.log('client.js has loaded');
-$(document).ready(onReady);
-let verbose = false;
+$(document).ready(onReady); // Loads once document has completed loading
+let verbose = false; // Used to hide all console.log
 
 function onReady() {
     if (verbose) console.log('in onReady');
     getMath();
-    // renderToDom();
     $('#plusButton').on('click', plusButtonClick);
     $('#subtractButton').on('click', subtractButtonClick);
     $('#multiplyButton').on('click', multiplyButtonClick);
@@ -64,7 +62,7 @@ function getMath() {
 
 
 function postMath() {
-    console.log('in postMath');
+    if (verbose) console.log('in postMath');
     // Gather information from webpage
     if (operator == "NONE") {
         alert('Please press an operator!')
@@ -75,34 +73,20 @@ function postMath() {
             operator: operator,
             right: $('#rightInput').val()
         }
-        console.log('Sending:', objectToSend)
+        if (verbose) console.log('Sending:', objectToSend)
         $.ajax({
             type: 'POST',
             url: '/math',
             data: objectToSend
         }).then(function (hamburger) {
-            console.log('Back with Response from Server:', hamburger)
+            if (verbose) console.log('Back with Response from Server:', hamburger)
             getMath();
-        }).catch(function (error) {
+        })/*End then*/.catch(function (error) {
             alert('Your POST has an error, check console!')
-            console.log(err)
-        })
-    }
-    // END AJAX for POST /math
+            if (verbose) console.log(err)
+        }) // End catch
+    } // End AJAX for POST /math
 } // End postMath function
-
-function getAnswer() {
-    $.ajax({
-        type: 'GET',
-        url: '/answer'
-    }).then(function (fajita) {
-        console.log('Back from Server /math with:', fajita)
-        // RUN renderToDom
-    }).catch(function (err) {
-        alert('Your GET has an error, check console!')
-        console.log(err)
-    })// End AJAX for GET /answer
-}
 
 function renderToDom(history) {
     let el = $('#history');
@@ -114,3 +98,16 @@ function renderToDom(history) {
         }
     }
 }
+
+// function getAnswer() {
+//     $.ajax({
+//         type: 'GET',
+//         url: '/answer'
+//     }).then(function (fajita) {
+//         console.log('Back from Server /math with:', fajita)
+//         // RUN renderToDom
+//     }).catch(function (err) {
+//         alert('Your GET has an error, check console!')
+//         console.log(err)
+//     })// End AJAX for GET /answer
+// } // Unnecessary GET function.  Removed.
