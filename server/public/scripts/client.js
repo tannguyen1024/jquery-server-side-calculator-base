@@ -43,6 +43,9 @@ function clearButtonClick() {
     $('#leftInput').val('');
     $('#rightInput').val('');
 }
+function buttonClicked (){
+    
+}
 // End Click Listener Functions
 
 function getMath() {
