@@ -65,7 +65,7 @@ function doMath (){
         if (verbose) console.log(mathReturn)
     }
     else if (math[current].operator == '*') {
-        if (verbose) console.log('That was division!')
+        if (verbose) console.log('That was multiplication!')
         answer = (math[current].left) * (math[current].right);
         if (verbose) console.log(answer);
         objectToClient = {
